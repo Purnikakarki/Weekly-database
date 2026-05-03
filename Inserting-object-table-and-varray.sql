@@ -26,3 +26,19 @@ INSERT INTO instructors(instructor_id)
 		FROM addresses a
 		WHERE a.street='127 AIRPORT ROAD')
 			WHERE instructor_id=123;
+
+//Insert into multidimensional VARRAY (sites_classroom)
+
+INSERT INTO sites_classroom (sites_id, classroom)
+VALUES (1, classroom_varray_type(
+    classroom_type('A1', 101, 40),
+    classroom_type('B1', 102, 35),
+    classroom_type('C1', 103, 25)
+));
+
+//Insert into VARRAY table (potential_clients)
+
+INSERT INTO potential_clients (client_id, contacts)
+VALUES (1, contact_varray_type('EMAIL', 'PHONE', 'WHATSAPP'));
+
+
